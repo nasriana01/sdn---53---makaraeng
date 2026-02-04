@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>UPTD SDN 53 Makaraeng</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* HEADER */
+header {
+    background: #2c2c2c;
+    color: white;
+    padding: 15px 30px;
+}
+
+.header-top {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    margin-right: 15px;
+}
+
+nav {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+nav a, nav span {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #444;
+    top: 25px;
+    min-width: 220px;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* BANNER */
+.banner img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+/* CONTENT */
+.content {
+    background: white;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.blue {
+    background: #dfeff5;
+}
+
+/* PROFIL PESERTA DIDIK (HANYA GAMBAR) */
+.image-only {
+    display: none;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-only img {
+    max-width: 30%;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #2c2c2c;
+    color: white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header-top">
+        <img src="images/logo.jpeg" class="logo">
+        <h1>SDN 53 MAKARAENG, MAROS</h1>
+    </div>
+
+    <nav>
+        <a href="#" onclick="showHome()">HOME</a>
+        <a href="#" onclick="showAkreditasi()">AKREDITASI DAN SERTIFIKASI</a>
+        <a href="#" onclick="showPeserta()">PESERTA DIDIK</a>
+        <div class="dropdown">
+            <span>LAINNYA</span>
+            <div class="dropdown-content">
+                <a href="#" onclick="showProfil()">PROFIL PESERTA DIDIK</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="banner" id="banner">
+    <img src="images/home.jpeg">
+</section>
+
+<section id="home" class="content">
+    <p>
+        UPTD SDN 53 MAKARAENG merupakan salah satu sekolah jenjang SD berstatus Negeri
+        yang berada di wilayah Kec. Mandai, Kab. Maros, Sulawesi Selatan.
+        UPTD SDN 53 MAKARAENG didirikan pada tanggal 1 Januari 1970 dengan Nomor SK
+        Pendirian yang berada dalam naungan Kementerian Pendidikan dan Kebudayaan.
+    </p>
+    <p>
+        Dalam kegiatan pembelajaran, sekolah yang memiliki 284 siswa ini dibimbing
+        oleh guru-guru yang profesional di bidangnya. Kepala Sekolah UPTD SDN 53
+        MAKARAENG saat ini adalah <b>Murni</b>. Operator yang bertanggung jawab adalah
+        <b>Syahril</b>.
+    </p>
+    <p>
+        UPTD SDN 53 MAKARAENG merupakan salah satu sekolah jenjang SD di wilayah Kab.
+        Maros yang menawarkan pendidikan berkualitas dengan terakreditasi B dan
+        sertifikasi ISO 9001:2008. Dengan adanya keberadaan UPTD SDN 53 MAKARAENG,
+        diharapkan dapat memberikan kontribusi dalam mencerdaskan anak bangsa di
+        wilayah Kec. Mandai, Kab. Maros.
+    </p>
+</section>
+
+<section id="akreditasi" class="content blue">
+    <img src="images/akreditasi.jpeg" style="width:100%;border-radius:10px;margin-bottom:15px;">
+    <p>
+        Sekolah ini telah terakreditasi <b>B</b> dengan Nomor SK Akreditasi
+        <b>160/SK/BAP-SM/XI/2017</b> pada tanggal <b>23 November 2017</b>.
+        Selain itu, UPTD SDN 53 MAKARAENG juga telah tersertifikasi
+        <b>ISO 9001:2008</b>.
+    </p>
+</section>
+
+<section id="peserta" class="content">
+    <p>
+        UPTD SDN 53 MAKARAENG memiliki total <b>284 siswa</b> yang terdiri dari
+        <b>149 siswa laki-laki</b> dan <b>135 siswa perempuan</b>.
+    </p>
+</section>
+
+<!-- PROFIL PESERTA DIDIK : HANYA GAMBAR -->
+<section class="image-only" id="profil">
+    <img src="images/peserta1.png">
+    <img src="images/peserta2.png">
+    <img src="images/peserta3.png">
+</section>
+
+<footer>
+    © 2026 UPTD SDN 53 Makaraeng
+</footer>
+
+<script>
+function hideAll() {
+    document.getElementById("home").style.display = "none";
+    document.getElementById("akreditasi").style.display = "none";
+    document.getElementById("peserta").style.display = "none";
+    document.getElementById("profil").style.display = "none";
+    document.getElementById("banner").style.display = "none";
+}
+
+function showHome() {
+    hideAll();
+    document.getElementById("home").style.display = "block";
+    document.getElementById("banner").style.display = "block";
+}
+
+function showAkreditasi() {
+    hideAll();
+    document.getElementById("akreditasi").style.display = "block";
+}
+
+function showPeserta() {
+    hideAll();
+    document.getElementById("peserta").style.display = "block";
+}
+
+function showProfil() {
+    hideAll();
+    document.getElementById("profil").style.display = "flex";
+}
+</script>
+
+</body>
+</html>
